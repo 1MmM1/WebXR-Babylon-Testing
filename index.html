@@ -84,7 +84,10 @@
                 }, scene);
 
                 const xr = await scene.createDefaultXRExperienceAsync({
-                    floorMeshes: [ground]
+                      uiOptions: {
+                        sessionMode: "immersive-ar",
+                      },
+                      optionalFeatures: ["hit-test", "anchors"],
                 });
                 return scene;
             };
